@@ -1,20 +1,24 @@
 package map;
 
 import java.awt.Color;
+import java.util.ArrayList;
 
 import entity.*;
 import loaders.ImageLoader;
+import loaders.LoadFile;
 import loaders.TextureLoader;
 import render.Engine;
 
 public class MapLoader {
 	
 	private ImageLoader map;
+	private ArrayList<String> txtMap;
 	private int[] pixels;
 	private int width, height;
 	
-	public MapLoader(String path) {
-		map = new ImageLoader(path);
+	public MapLoader(String imagePath, String txtPath) {
+		map = new ImageLoader(imagePath);
+		txtMap = new LoadFile(txtPath).getFileText();
 		pixels = map.getPixels();
 		width = map.getWidth();
 		height = map.getHeight();
@@ -22,10 +26,8 @@ public class MapLoader {
 	
 	public void load() {
 		Engine.entities.add(new Mario(3*64, 3*64, 64, 128, TextureLoader.marioTallRight0));
-		Engine.entities.add(new Pipe(28*64, 11*64, 2));
-		Engine.entities.add(new Pipe(33*64, 9*64, 4));
-
 		
+		loadTxtMap();
 		for(int x = 0; x < width; x++) {
 			for(int y = 0; y < height; y++) {
 				Color color = new Color(pixels[x + y * width]);
@@ -45,4 +47,18 @@ public class MapLoader {
 		}
 	}
 	
+	public void loadTxtMap() {
+		String divider = "|";
+		for(String str: txtMap) {
+			if(str.indexOf("pipeClosed") == 0) {
+				String s = str.substring(11);
+				int x = Integer.valueOf(s.substring(0, s.indexOf(divider)));
+				s = s.substring(s.indexOf(divider) + 1);
+				int y = Integer.valueOf(s.substring(0, s.indexOf(divider)));
+				s = s.substring(s.indexOf(divider) + 1);
+				int h = Integer.valueOf(s.substring(0));
+				Engine.entities.add(new Pipe(x*64, y*64, h));		
+			}
+		}
+	}
 }

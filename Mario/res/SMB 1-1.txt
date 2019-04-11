@@ -1,0 +1,6 @@
+pipeClosed 28|11|2
+pipeClosed 38|10|3
+pipeClosed 46|9|4
+pipeClosed 57|9|4
+pipeClosed 164|11|2
+pipeClosed 180|11|2

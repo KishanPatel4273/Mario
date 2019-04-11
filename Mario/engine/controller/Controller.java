@@ -55,7 +55,7 @@ public class Controller {
 			jump.setY(0);
 		}
 
-		Vector collisionFix = collisionDetection(player.getCollider());
+		Vector collisionFix = collisionDetection(player.getCollider());	
 		player.addY((int) collisionFix.getY());
 		forceX.addX(collisionFix.getX());
 		
