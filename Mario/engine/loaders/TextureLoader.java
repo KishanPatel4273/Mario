@@ -13,6 +13,7 @@ public class TextureLoader {
 	public static int brownSmoothBrick = 16;
 	public static int blueBrick = 4;
 	public static int brownFloor = 5;
+	public static int blueFloor = 27;
 	
 	public static int questionBlock0 = 6;
 	public static int questionBlock1 = 7;
@@ -28,15 +29,25 @@ public class TextureLoader {
 	public static int coin4 = 15;
 	public static int[] coinBuffer = {coin0, coin1, coin2, coin3, coin4};
 	
-	public static int pipeTopLeft = 17;
-	public static int pipeTopRight = 18;
-	public static int pipeBodyLeft = 19;
-	public static int pipeBodyRight = 20;
+	public static int pipeTopLefti = 17;
+	public static int pipeTopRighti = 18;
+	public static int pipeBodyLefti = 19;
+	public static int pipeBodyRighti = 20;
 
+	public static int pipeTopTopneg1 = 21;
+	public static int pipeTopBottomneg1 = 22;
+	
+	public static int pipeBodyTopLeftCorner = 23;
+	public static int pipeBodyTopRightCorner = 24;
+	public static int pipeBodyBottomRightCorner = 25;
+	public static int pipeBodyBottomLeftCorner = 26;
+
+	
 	
 	public TextureLoader() {
 		 sprites = new ArrayList<Texture>();
 		 sprites.add(new Texture(objectSpriteSheet.getPart(321, 259, 16, 16), 4, brownFloor));//brown floor
+		 sprites.add(new Texture(objectSpriteSheet.getPart(321, 276, 16, 16), 4, blueFloor));//blue floor
 		 sprites.add(new Texture(characterSpriteSheet.getPart(80, 1, 16, 32), 4, marioTallRight0));// mario
 		 sprites.add(new Texture(objectSpriteSheet.getPart(253, 429, 16, 16), 4, brownBrick));// blown brick
 		 sprites.add(new Texture(objectSpriteSheet.getPart(253, 463, 16, 16), 4, blueBrick));// blue brick
@@ -55,11 +66,16 @@ public class TextureLoader {
 		 sprites.add(new Texture(objectSpriteSheet.getPart(304, 225, 16, 16), 4, coin3));// coin 3
 		 sprites.add(new Texture(objectSpriteSheet.getPart(253, 242, 16, 16), 4, coin4));// coin 4
 
-		 sprites.add(new Texture(objectSpriteSheet.getPart(338, 344, 16, 16), 4, pipeTopLeft));// pipe top left
-		 sprites.add(new Texture(objectSpriteSheet.getPart(355, 344, 16, 16), 4, pipeTopRight));// pipe top right 
-		 sprites.add(new Texture(objectSpriteSheet.getPart(338, 361, 16, 16), 4, pipeBodyLeft));// pipe body left 
-		 sprites.add(new Texture(objectSpriteSheet.getPart(355, 361, 16, 16), 4, pipeBodyRight));// pipe body right 
-
+		 sprites.add(new Texture(objectSpriteSheet.getPart(338, 344, 16, 16), 4, pipeTopLefti));// pipe top left i
+		 sprites.add(new Texture(objectSpriteSheet.getPart(355, 344, 16, 16), 4, pipeTopRighti));// pipe top right i
+		 sprites.add(new Texture(objectSpriteSheet.getPart(338, 361, 16, 16), 4, pipeBodyLefti));// pipe body left i
+		 sprites.add(new Texture(objectSpriteSheet.getPart(355, 361, 16, 16), 4, pipeBodyRighti));// pipe body right i 
+		 sprites.add(new Texture(objectSpriteSheet.getPart(321, 378, 16, 16), 4, pipeTopTopneg1));// pipe top top -1 
+		 sprites.add(new Texture(objectSpriteSheet.getPart(321, 395, 16, 16), 4, pipeTopBottomneg1));// pipe top bottom -1 
+		 sprites.add(new Texture(objectSpriteSheet.getPart(338, 378, 16, 16), 4, pipeBodyTopLeftCorner));// pipe body top left corner
+		 sprites.add(new Texture(objectSpriteSheet.getPart(355, 378, 16, 16), 4, pipeBodyTopRightCorner));// pipe body top right corner
+		 sprites.add(new Texture(objectSpriteSheet.getPart(338, 395, 16, 16), 4, pipeBodyBottomLeftCorner));// pipe body bottom left corner
+		 sprites.add(new Texture(objectSpriteSheet.getPart(355, 395, 16, 16), 4, pipeBodyBottomRightCorner));// pipe body bottom right corner
 		 
 	}
 	
@@ -69,6 +85,6 @@ public class TextureLoader {
 				return sprites.get(i);
 			}
 		}
-		return null;
+		return sprites.get(0);
 	}
 }

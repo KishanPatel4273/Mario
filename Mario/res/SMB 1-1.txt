@@ -1,6 +1,9 @@
-pipeClosed 28|11|2
-pipeClosed 38|10|3
-pipeClosed 46|9|4
-pipeClosed 57|9|4
-pipeClosed 164|11|2
-pipeClosed 180|11|2
+player 3|3
+pipeClosedi|28|11|2
+pipeClosedi|38|10|3
+pipeClosedi|46|9|4
+pipeIni|57|9|4|89|19
+pipeClosedi|104|18|12
+pipeOut-1|103|28|2|163|0
+pipeClosedi|164|11|2
+pipeClosedi|180|11|2

@@ -25,7 +25,7 @@ public class Ray {
 		}
 		return l;
 	}
-	
+
 	public float segmentIntersection(Vector a, Vector b, Vector c, Vector d) {
 		Vector r = Vector.subtract(b, a);
 		Vector s = Vector.subtract(d, c);
