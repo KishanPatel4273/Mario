@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class TextureLoader {
 	
-	public ImageLoader objectSpriteSheet = new ImageLoader("res/ObjectSpriteSheet.png");
-	public ImageLoader characterSpriteSheet = new ImageLoader("res/CharacterSpriteSheet.png");
+	public ImageLoader objectSpriteSheet = new ImageLoader("C:\\Users\\kelli\\git\\Mario\\Mario\\res\\ObjectSpriteSheet.png");
+	public ImageLoader characterSpriteSheet = new ImageLoader("C:\\Users\\kelli\\git\\Mario\\Mario\\res\\CharacterSpriteSheet.png");
 	public ArrayList<Texture> sprites;
 	
 	public static int marioTallRight0 = 2;
@@ -42,7 +42,7 @@ public class TextureLoader {
 	public static int pipeBodyBottomRightCorner = 25;
 	public static int pipeBodyBottomLeftCorner = 26;
 
-	
+	public static int goomba = 28;
 	
 	public TextureLoader() {
 		 sprites = new ArrayList<Texture>();
@@ -77,6 +77,7 @@ public class TextureLoader {
 		 sprites.add(new Texture(objectSpriteSheet.getPart(338, 395, 16, 16), 4, pipeBodyBottomLeftCorner));// pipe body bottom left corner
 		 sprites.add(new Texture(objectSpriteSheet.getPart(355, 395, 16, 16), 4, pipeBodyBottomRightCorner));// pipe body bottom right corner
 		 
+		 sprites.add(new Texture(objectSpriteSheet.getPart(423, 12, 16, 16), 4, goomba));// pipe body bottom right corner
 	}
 	
 	public Texture getTexture(int id) {
