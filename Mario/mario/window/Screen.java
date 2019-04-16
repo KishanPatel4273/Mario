@@ -18,6 +18,7 @@ public class Screen{
 		engine = new Engine(width, height);
 		map1 = new MapLoader("res/SMB 1-1.png", "res/SMB 1-1.txt");
 		map1.load();
+		System.out.println(Engine.entities.size());
 	}
 	
 	public void update() {
