@@ -108,8 +108,12 @@ public class Entity {
 	public void setCollidable(boolean collidable) {
 		this.collidable = collidable;
 	}
+	
+	public int distanceFrom(Entity e) {
+		return (int) new Vector(getCenter().getX() - e.getCenter().getX(), getCenter().getY() - e.getCenter().getY()).getMagnitude();
+	}
 
 	public String toString() {
-		return "(" + x + " ," + y + " ," + width + " ," + height + ")" + " " + tag;
+		return "(" + x + " ," + y + " ," + width + " ," + height + ")" + " " + id;
 	}
 }

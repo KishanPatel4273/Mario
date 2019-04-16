@@ -14,6 +14,7 @@ public class Coin extends Entity {
 		time = 1/10f;
 		animationBuffer = new AnimationBuffer(TextureLoader.coinBuffer, time);
 		setCollidable(false);
+		setTag(3);
 	}
 	
 	public void update() {

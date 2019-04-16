@@ -59,11 +59,18 @@ public class Controller {
 		player.addY((int) collisionFix.getY());
 		forceX.addX(collisionFix.getX());
 		
+		Engine.frameOfReference.add(Vector.scale(1, forceX));
+		if(player.getX() < Display.WIDTH/2 - player.getWidth()/2) {
+			player.addVector(forceX);
+			forceX.clear();
+		} else {
+			player.setX(Display.WIDTH/2 - player.getWidth()/2);
+		}
 		for(Entity e: Engine.entities) {
-			if(e.getTag() == 0) {
+			if(e.getTag() != 1) {
 				e.addVector(Vector.scale(-1, forceX));				
 			}
-		}
+		}	
 	}
 	
 	public Vector collisionDetection(Collider c) {

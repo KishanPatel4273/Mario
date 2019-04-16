@@ -2,6 +2,7 @@ package render;
 
 import java.util.ArrayList;
 
+import controller.Controller;
 import loaders.ImageLoader;
 import loaders.Texture;
 import loaders.TextureLoader;
@@ -13,6 +14,7 @@ import tools.Vector;
 public class Engine extends Render {
 
 	public static ArrayList<Entity> entities = new ArrayList<Entity>();
+	public static Vector frameOfReference = new Vector();
 	public TextureLoader textureloader;
 	public Frame frame;
 	
@@ -41,4 +43,15 @@ public class Engine extends Render {
 			this.renderTexture(e.getX(), e.getY(), textureloader.getTexture(e.getID()));			
 		}
 	}
+	
+	public static void translateFrame(Vector frame) {
+		Vector translate = Vector.add(Vector.scale(1, frameOfReference), Vector.scale(-1, frame));
+		frameOfReference = Vector.add(frameOfReference, Vector.scale(-1, translate));
+		for(Entity e: entities) {
+			if(e.getTag() != 1) {
+				e.addVector(translate);
+			}
+		}
+	}
+	
 }

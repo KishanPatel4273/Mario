@@ -17,7 +17,6 @@ public class Player extends Entity{
 	public void update() {
 		controller.update(this, InputHandler.key);
 	}
-	
 }
 
 
