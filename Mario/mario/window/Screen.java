@@ -16,9 +16,9 @@ public class Screen{
 	
 	public Screen(int width, int height) {
 		engine = new Engine(width, height);
-		map1 = new MapLoader("C:\\Users\\kelli\\git\\Mario\\Mario\\res\\SMB 1-1.png", "C:\\Users\\kelli\\git\\Mario\\Mario\\res\\SMB 1-1.txt");
+		map1 = new MapLoader("/Mario/res/SMB 1-1.png", "/Mario/res/SMB 1-1.txt");
 		map1.load();
-		System.out.println(Engine.entities.size());
+		System.out.println("Entite count:" + Engine.entities.size());
 	}
 	
 	public void update() {

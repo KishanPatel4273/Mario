@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class TextureLoader {
 	
-	public ImageLoader objectSpriteSheet = new ImageLoader("C:\\Users\\kelli\\git\\Mario\\Mario\\res\\ObjectSpriteSheet.png");
-	public ImageLoader characterSpriteSheet = new ImageLoader("C:\\Users\\kelli\\git\\Mario\\Mario\\res\\CharacterSpriteSheet.png");
+	public ImageLoader objectSpriteSheet = new ImageLoader("/Mario/res/ObjectSpriteSheet.png");
+	public ImageLoader characterSpriteSheet = new ImageLoader("/Mario/res/CharacterSpriteSheet.png");
 	public ArrayList<Texture> sprites;
 	
 	public static int marioTallRight0 = 2;

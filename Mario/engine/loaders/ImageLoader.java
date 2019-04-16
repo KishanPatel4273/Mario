@@ -15,8 +15,9 @@ public class ImageLoader {
 	private BufferedImage image;
 	private int[] pixels;
 	private int width, height;
-	
+	private String pathFix = System.getProperty("user.dir");
 	public ImageLoader(String path) {
+		path = pathFix + path;
 		try {
 			if(ResourceLoader.load(path) == null) {
 				image = ImageIO.read(new File(path));

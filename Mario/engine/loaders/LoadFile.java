@@ -12,13 +12,14 @@ public class LoadFile {
 	private ArrayList<String> fileText;
 	private File file;
 	private BufferedReader br;
-	
+	private String pathFix = System.getProperty("user.dir");
 	/**
 	 * 
 	 * @param path for .txt file
 	 */
 	//loads file and puts all text line by line into an array
 	public LoadFile(String path) {
+		path = pathFix + path;
 		fileText = new ArrayList<String>();
 		file = new File(path);
 		br = null;
