@@ -6,6 +6,7 @@ import objects.Entity;
 public class Brick extends Entity{
 
 	public Brick(int x, int y, int width, int height, String type) {
+		//can you see this message?
 		super(x, y, width, height, TextureLoader.brownBrick);
 		if(type.indexOf("blueBrick") > -1) {
 			setID(TextureLoader.blueBrick);
