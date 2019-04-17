@@ -3,5 +3,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="Mario/engine"/>
 	<classpathentry kind="src" path="Mario/mario"/>
+	<classpathentry kind="src" path="Mario/res"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
