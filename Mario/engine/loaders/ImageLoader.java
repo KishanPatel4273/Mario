@@ -8,6 +8,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import window.Display;
 import window.Screen;
 
 public class ImageLoader {
@@ -17,7 +18,12 @@ public class ImageLoader {
 	private int width, height;
 	private String pathFix = System.getProperty("user.dir");
 	public ImageLoader(String path) {
-		path = pathFix + path;
+		if(Display.RUNNABLE) {
+			//path = pathFix + "/Mario" + path;
+		} else {
+			path = pathFix + "/Mario/res" + path;	
+		}
+		System.out.println(path);
 		try {
 			if(ResourceLoader.load(path) == null) {
 				image = ImageIO.read(new File(path));

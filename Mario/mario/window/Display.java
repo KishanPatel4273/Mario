@@ -21,7 +21,8 @@ public class Display extends Canvas implements Runnable {
 	public static final int WIDTH = 10 * SCALE;
 	public static final int HEIGHT = 10 * SCALE;
 	public static final String TITLE = "Mario";
-
+	public static final boolean RUNNABLE = false;//when exporting make true
+	
 	private Thread thread;
 	private BufferedImage img;
 	private boolean running = false;
