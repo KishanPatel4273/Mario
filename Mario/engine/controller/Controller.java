@@ -104,10 +104,6 @@ public class Controller {
 					force.addX(x);
 					e.collide("1");
 				}
-				if(e.getID() == TextureLoader.goomba && force.getY() > 0) {
-					System.out.println("dead");
-					Engine.entities.remove(e);
-				}
 			}
 		}
 		return force;
