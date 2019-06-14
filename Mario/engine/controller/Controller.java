@@ -2,6 +2,8 @@ package controller;
 
 import java.awt.event.KeyEvent;
 
+import Physics.PhysicsEngine;
+import loaders.TextureLoader;
 import objects.Entity;
 import objects.Player;
 import render.Engine;
@@ -20,7 +22,7 @@ public class Controller {
 		walkSpeed = 10;
 		runSpeed = 15;
 		jumpSpeed = (256 + 16)*2;
-		gravity = 12;
+		gravity = (int) PhysicsEngine.gravity;
 		jump = new Vector();
 		currentSpeed = walkSpeed;
 		canJump = false;
@@ -101,6 +103,10 @@ public class Controller {
 				if(left.contains(e.getCenter())) {
 					force.addX(x);
 					e.collide("1");
+				}
+				if(e.getID() == TextureLoader.goomba && force.getY() > 0) {
+					System.out.println("dead");
+					Engine.entities.remove(e);
 				}
 			}
 		}

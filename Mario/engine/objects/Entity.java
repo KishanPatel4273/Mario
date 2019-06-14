@@ -6,7 +6,7 @@ import tools.Vector;
 public class Entity {
 	
 	protected int x, y, width, height, id, tag;
-	protected boolean transparency, collidable;
+	protected boolean transparency, collidable, gravity;
 	
 	public Entity(int x, int y, int width, int height, int id) {
 		this.x = x;
@@ -17,6 +17,7 @@ public class Entity {
 		this.tag = 0;
 		transparency = false;
 		collidable = true;
+		gravity = false;
 	}
 	
 	public void update() {
@@ -28,7 +29,9 @@ public class Entity {
 	}
 	
 	public void collide(String direction) {
-		
+		if(id == 28) {
+			System.out.println(direction);
+		}
 	}
 	
 	public int getID() {

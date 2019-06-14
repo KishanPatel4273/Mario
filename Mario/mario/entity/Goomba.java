@@ -1,5 +1,6 @@
 package entity;
 
+import Physics.PhysicsEngine;
 import objects.Entity;
 
 public class Goomba extends Entity{
@@ -8,8 +9,10 @@ public class Goomba extends Entity{
 
 	public Goomba(int x, int y, int width, int height, int id) {
 		super(x, y, width, height, id);
+		gravity = true;
 		direction=-1;
 		speed=1;
+		setTag(3);
 	}
 
 	public void collide(String direction) {
@@ -22,10 +25,11 @@ public class Goomba extends Entity{
 	}
 	
 	public void update() {
+		PhysicsEngine.checkPhysics(this);
+		//System.out.println(direction + " " + speed);
 		if(direction==1) {
 			addX(speed);
-		}
-		if(direction==-1) {
+		} else if(direction==-1) {
 			addX(-speed);
 		}
 	}

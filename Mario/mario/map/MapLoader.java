@@ -26,7 +26,6 @@ public class MapLoader {
 	
 	public void load() {		
 		loadTxtMap();
-		Engine.entities.add(new Goomba(31*64, 12*64, 64, 64, TextureLoader.goomba));
 		for(int x = 0; x < width; x++) {
 			for(int y = 0; y < height; y++) {
 				Color color = new Color(pixels[x + y * width]);
@@ -53,6 +52,9 @@ public class MapLoader {
 				}
 				if(color.getRed() == 255 && color.getGreen() == 201 && color.getBlue() == 14) {
 					Engine.entities.add(new QuestionBlock(x*64, y*64, 64, 64));
+				}
+				if(color.getRed() == 255 && color.getGreen() == 128 && color.getBlue() == 0) {
+					Engine.entities.add(new Goomba(x*64, y*64, 64, 64, TextureLoader.goomba));
 				}
 			}
 		}
